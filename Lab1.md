@@ -86,3 +86,54 @@ Hello.java
 
 By using `ls` with the filename `Hello.java`, it outputs the name of the file located at the path I passed to the commmand, which was `Hello.java`.
 This is not an error, rather it is the intended behaviour of the `ls` command when the path to a file is passed as an argument to it.
+
+## The `cat` command
+
+### _no_ arguments
+
+I navigated to the `/home/lecture1/messages` directory and used the `cat` command with no arguments here.
+
+```
+[user@sahara ~/lecture1]$ cat 
+This is a test
+This is a test
+```
+
+Using the `cat` command with no arguments from the working directory `/home/lecture1/messages`, I observed that this does not do anything immediately, but if I type in something and hit Enter, it repeats what I typed back. Here, I typed `This is a test` into the console and it repeated the same line.
+I think `cat` without no arguments does not serve any purpose other than to repeat the text entered, which is probably because instead of reading from a file whose path is passed to the argument, because no path is passed to it, it defaults to taking input from the console/user and outputting it.
+I think this is the intended behaviour but also that the `cat` command is not really intended to be used this way, without any arguments.
+
+### Path to a _directory_ as an argument
+
+I ran the `cat` command from the `/home` directory with the argument `lecture1/`, which is a subdirectory within the `/home` directory.
+
+```
+[user@sahara ~]$ cat lecture1/
+cat: lecture1/: Is a directory
+```
+
+By using `cat` with a path to a directory as an argument, I receive an **error** stating that `lecture1/` is a directory.
+I understand that this throws an error because the `cat` command is used to output the contents of the specified file(s), but `lecture1/` refers to a directory, not a file and hence the `cat` command is not able to output its contents.
+
+### Path to a _file_ as an argument
+
+I ran the `cat` command from the `/home/lecture1` directory, which contains a folder `messages`, and the files `README`, `Hello.java` and `Hello.class`.
+
+```
+[user@sahara ~/lecture1]$ cat Hello.java 
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+public class Hello {
+  public static void main(String[] args) throws IOException {
+    String content = Files.readString(Path.of(args[0]), StandardCharsets.UTF_8);    
+    System.out.println(content);
+  }
+}
+```
+
+By using `cat` with the filename `Hello.java` as an argument, it outputs the entire contents of the file located at the path I passed to the commmand, which was `Hello.java`.
+This output is the Java code that was contained within the `Hello.java` file.
+This is not an error, rather it is the intended behaviour of the `cat` command when the path to a file is passed as an argument to it.
