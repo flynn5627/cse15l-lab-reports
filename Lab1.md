@@ -101,7 +101,7 @@ This is a test
 
 Using the `cat` command with no arguments from the working directory `/home/lecture1/messages`, I observed that this does not do anything immediately, but if I type in something and hit Enter, it repeats what I typed back. Here, I typed `This is a test` into the console and it repeated the same line.
 I think `cat` without no arguments does not serve any purpose other than to repeat the text entered, which is probably because instead of reading from a file whose path is passed to the argument, because no path is passed to it, it defaults to taking input from the console/user and outputting it.
-I think this is the intended behaviour but also that the `cat` command is not really intended to be used this way, without any arguments.
+From the documentation of the `cat` command, I see that it states "With no FILE, or when FILE is -, read standard input.", so I infer that this is the intended behaviour of the command when there is no file input and therefore it is not an error according to the developers.
 
 ### Path to a _directory_ as an argument
 
