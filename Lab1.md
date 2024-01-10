@@ -23,7 +23,7 @@ This is not an error but is an intended behaviour/use of the `cd` command to ret
 I ran the `cd` command from the `/home` directory with the argument `lecture1`, which is a subdirectory within the `/home` directory.
 
 ```
-[user@sahara ~]$ cd lecture1/
+[user@sahara ~]$ cd lecture1
 [user@sahara ~/lecture1]$ pwd
 /home/lecture1
 [user@sahara ~/lecture1]$
@@ -45,3 +45,44 @@ bash: cd: Hello.java: Not a directory
 By using `cd` to change directory into Hello.java, I receive an **error** stating that `Hello.java` is not a directory.
 I understand that this throws an error because the `cd` commnand is used to change the current working directory into the specified directory, but `Hello.java` refers to a 
 singular file, not a direcory and hence the `cd` command is not able to `cd` into the given path.
+
+## The `ls` command
+
+### _no_ arguments
+
+I navigated to the `/home/lecture1/messages` directory and used the `ls` command with no arguments here.
+
+```
+[user@sahara ~/lecture1/messages]$ ls
+en-us.txt  es-mx.txt  fr.txt  zh-cn.txt
+```
+
+Using the `ls` command with no arguments from the working directory `/home/lecture1/messages`, I observed that this lists the files in the `messages` directory, which was the current working directory when I used the command.
+Since there are four files in the `messages` subdirectory, it lists the names of each of these files in the output.
+This is not an error but is an intended behaviour/use of the `ls` command to list the names of all the files/folders in the current working directory directory.
+
+### Path to a _directory_ as an argument
+
+I ran the `ls` command from the `/home` directory with the argument `lecture1`, which is a subdirectory within the `/home` directory.
+
+```
+[user@sahara ~]$ ls lecture1
+Hello.class  Hello.java  messages  README
+```
+
+I observed that this outputs the names of all the files and folders in the `lecture1` folder which was within the `/home` directory.
+This means that I can use the `ls` command with the path to a directory as an argument to be able to list the files in any directory that I specify, instead of only the current working directory as it does without any arguments
+I anticipate that this command will be useful to list files in any directory.
+This output was not an error but the intended use of the `ls` command.
+
+### Path to a _file_ as an argument
+
+I ran the `ls` command from the `/home/lecture1` directory, which contains a folder `messages`, and the files `README`, `Hello.java` and `Hello.class`.
+
+```
+[user@sahara ~/lecture1]$ ls Hello.java
+Hello.java
+```
+
+By using `ls` with the filename `Hello.java`, it outputs the name of the file located at the path I passed to the commmand, which was `Hello.java`.
+This is not an error, rather it is the intended behaviour of the `ls` command when the path to a file is passed as an argument to it.
