@@ -129,3 +129,10 @@ The screenshot above shows me being able to login without entering my password a
 
 ## Part 3
 
+Through this week's lab, I learnt that we can make it much easier to `ssh` to another remote server, through bypassing the password requirement everytime. I thought there would be a "Save Password" prompt such as we have when signing in to a website on a web browser but this seems to be `ssh`'s version of it, which is quite interesting. This is definitely something I will set up when I have to `ssh` into other servers in the future to save time.
+
+The `man` command was interesting to discover, since it eliminates the need to search up how to use these commands on the Internet, allowing us to look up their documentation through the command-line itself. 
+
+The `scp` command was also interesting, for copying files between different computers/servers with ease. The `mkdir` command too, with the ability to create directories through the command-line itself. These commands, in combination, really make it possible to completely eliminate the need for a graphical user interface and allow us to only use the command-line interface for all our tasks. These labs really equip me to navigate the command-line interface effectively.
+
+Both Week 2 and 3's labs also taught me a lot about URLs and Web Servers. Now I really do understand what goes on behind the scenes when we visit a website, and how we're able to add and view data on websites. Creating our own mini web server using Java was very useful in understanding this.
