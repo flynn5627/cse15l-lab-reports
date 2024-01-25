@@ -61,6 +61,8 @@ Then, whenever I run the file using the `java ChatServer 4000` command, it execu
 
 ### Using `/add-message`
 
+#### Invalid Input
+
 <img width="706" alt="Screenshot 2024-01-24 at 11 19 31 AM" src="https://github.com/flynn5627/cse15l-lab-reports/assets/156235257/df7b1a5c-ff6f-4ce6-8243-5ba38a51c108">
 
 In this case, I purposely used `/add-message` using incorrect inputs to see if it correctly displays my error message. When the server is first run, even prior to receiving any requests, it initializes an instance of the Handler class I wrote, which creates an empty ArrayList referenced by the variable `messages`.
@@ -81,6 +83,8 @@ The condition in `if (message[0].equals("s") && user[0].equals("user"))` checks 
 
 The user did not use the right field here which is why it outputs `Invalid input` and since the input is invalid, it does not update the class field `messages`, which is the ArrayList storing all the messages added, with this new message.
 
+#### Valid Input
+
 <img width="702" alt="Screenshot 2024-01-24 at 11 18 23 AM" src="https://github.com/flynn5627/cse15l-lab-reports/assets/156235257/5f5e8621-c832-413c-a94e-9f9e9bca7b1a">
 
 In this case, I used `/add-message` using correct inputs to see if it correctly displays my error message. When the server is first run, even prior to receiving any requests, it initializes an instance of the Handler class I wrote, which creates an empty ArrayList referenced by the variable `messages`.
@@ -99,4 +103,12 @@ The line of code `String[] user = parts[1].split("=");` splits the second part o
 
 The condition in `if (message[0].equals("s") && user[0].equals("user"))` checks if the correct fields have been used in the right order, which is `s` for the message, and `user` for the name of the user. In this case, both evaluate to `true` since the right fields, `s` and `user` have been used in the query. Hence, the entire `if` condition evaluates to `true`, leading the flow to enter into the `if` branch.
 
-# TODO! Finish this correctly working part and the ssh part
+Here, the message along with the user's name gets appended to the ArrayList `messages` which is stored as a class variable, shared across all users and web requests. The message from the last time I used the command still remains there, so the ArrayList is updated to have two elements now, which are the formatted String values of each of the messages added.
+
+The code then uses a `for-each` loop to iterate through each message stored in the ArrayList and combine them into a string displaying each message in a different line. This string is returned by the method and therefore the web server displays both the messages currently stored in the ArrayList to the user in their web browser.
+
+## Part 2
+
+
+
+## Part 3
